@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 
 
@@ -51,14 +51,14 @@ public:
             fruits[fruitCount++] = Fruit(fruitName, fruitWeight);
         }
         else {
-            std::cout << "Íåò ìåñòà äëÿ äîáàâëåíèÿ íîâîãî ôðóêòà." << std::endl;
+            std::cout << "ÐÐµÑ‚ Ð¼ÐµÑÑ‚Ð° Ð´Ð»Ñ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ñ Ð½Ð¾Ð²Ð¾Ð³Ð¾ Ñ„Ñ€ÑƒÐºÑ‚Ð°." << std::endl;
         }
     }
 
    
     Fruit dropFruit(int index) {
         if (index < 0 || index >= fruitCount) {
-            std::cout << "Èíäåêñ âíå äèàïàçîíà." << std::endl;
+            std::cout << "Ð˜Ð½Ð´ÐµÐºÑ Ð²Ð½Ðµ Ð´Ð¸Ð°Ð¿Ð°Ð·Ð¾Ð½Ð°." << std::endl;
             throw "Error";
         }
         Fruit droppedFruit = fruits[index];
@@ -71,9 +71,9 @@ public:
 
     
     void printTree() const {
-        std::cout << "Äåðåâî: " << name << "\nÂîçðàñò: " << age << " ëåò\nÏëîäû:\n";
+        std::cout << "Ð”ÐµÑ€ÐµÐ²Ð¾: " << name << "\nÐ’Ð¾Ð·Ñ€Ð°ÑÑ‚: " << age << " Ð»ÐµÑ‚\nÐŸÐ»Ð¾Ð´Ñ‹:\n";
         for (int i = 0; i < fruitCount; i++) {
-            std::cout << "Íàçâàíèå ïëîäà: " << fruits[i].getName() << ", Âåñ ïëîäà: " << fruits[i].getWeight() << " Êã\n";
+            std::cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¿Ð»Ð¾Ð´Ð°: " << fruits[i].getName() << ", Ð’ÐµÑ Ð¿Ð»Ð¾Ð´Ð°: " << fruits[i].getWeight() << " ÐšÐ³\n";
         }
     }
 };
@@ -81,21 +81,21 @@ public:
 int main() {
     setlocale(LC_ALL, "Russian");
     
-    Tree appleTree("ßáëîíÿ", 3, 6);
+    Tree appleTree("Ð¯Ð±Ð»Ð¾Ð½Ñ", 3, 6);
 
  
-    appleTree.createFruit("ßáëîêî", 0.15);
-    appleTree.createFruit("ßáëîêî", 0.20);
-    appleTree.createFruit("ßáëîêî", 0.30);
-    appleTree.createFruit("ßáëîêî", 0.55);
-    appleTree.createFruit("ßáëîêî", 0.44);
-    appleTree.createFruit("ßáëîêî", 0.33);
+    appleTree.createFruit("Ð¯Ð±Ð»Ð¾ÐºÐ¾", 0.15);
+    appleTree.createFruit("Ð¯Ð±Ð»Ð¾ÐºÐ¾", 0.20);
+    appleTree.createFruit("Ð¯Ð±Ð»Ð¾ÐºÐ¾", 0.30);
+    appleTree.createFruit("Ð¯Ð±Ð»Ð¾ÐºÐ¾", 0.55);
+    appleTree.createFruit("Ð¯Ð±Ð»Ð¾ÐºÐ¾", 0.44);
+    appleTree.createFruit("Ð¯Ð±Ð»Ð¾ÐºÐ¾", 0.33);
     
     appleTree.printTree();
 
    
     Fruit droppedFruit = appleTree.dropFruit(5);
-    std::cout << "Óïàëî ÿáëîêî âåñîì: " << droppedFruit.getWeight() << " Êã\n";
+    std::cout << "Ð£Ð¿Ð°Ð»Ð¾ ÑÐ±Ð»Ð¾ÐºÐ¾ Ð²ÐµÑÐ¾Ð¼: " << droppedFruit.getWeight() << " ÐšÐ³\n";
 
     
     appleTree.printTree();
